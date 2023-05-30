@@ -1,6 +1,10 @@
-1. When a component is re-evaluated, every child and descendent will be also re-evaluated EVEN IF NO CHANGES ARE MADE.
-   Keep in mind that even though they are re-evaluated, the real DOM will not be changed if there are no actual changes.
-   So, re-evaluate these components is a complete waste. Let's find a solution.
+# React Optimizations Guidelines
+
+## main branch
+
+When a component is re-rendered, every child and descendent will be also re-rendered **even if no changes are made**. Keep in mind that even though they are re-evaluated, the real DOM **will not be changed if there are no actual changes** (this is what makes React's virtual DOM perfomant). Anyway, re-render these components is a complete waste. 
+
+So we can see this behaviour by clicking the _click to incremental local_ button of the parent component (App). Whenever the button is clicked, the Child component is re-rendered even if no changes are made to its class.
 
 2. React.memo() is the solution.
    A child component wrapped with React.memo() will not be re-evaluated if no changes for his PROPS are made.
