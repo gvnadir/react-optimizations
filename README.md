@@ -1,7 +1,7 @@
 # React Optimizations Guidelines
 
 _This repo has been created by following this video_: [REACT MEMO vs USECALLBACK vs USEMEMO
-](https://www.youtube.com/watch?v=uojLJFt9SzY) _by_ [Coding With Chaim](https://www.youtube.com/@CodingWithChaim)
+](https://www.youtube.com/watch?v=uojLJFt9SzY){:target="_blank"} _by_ [Coding With Chaim](https://www.youtube.com/@CodingWithChaim){:target="_blank"}
 
 In order to go through the react optimizations step by step, you have to follow the order of the branches listed below (this will respect the steps of the video too)
 
@@ -56,4 +56,4 @@ If we now click the _Click to increment local_ button we can see the getLargestN
 
 Is it possible to memoize (memorize using memo) complex data or other functions?
 Yes, by using the `useMemo()` hook.
-We can use `useMemo()` to solve the problem we faced before. `useMemo()` will memoize our `getLargestNumber` function and call it only when a certain dependency changes, in our case the `arr` dependency.
+We can use `useMemo()` to solve the problem we faced before. `useMemo()` will memoize our `getLargestNumber()` function and call it only when a certain dependency changes, in our case the `arr` dependency.
