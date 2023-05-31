@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Child from "./Child";
 import './App.css'
 
@@ -24,6 +24,8 @@ export default function App() {
     };
   }, []);
 
+	const memoizedCallback = useCallback(number => changeChildNumber(number), [])
+
   function incrementLocal() {
     setLocalNumber((state) => state + 1);
   }
@@ -34,7 +36,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <Child changeNumber={changeChildNumber} number={childNumber} />
+      <Child changeNumber={memoizedCallback} number={childNumber} />
       <button onClick={incrementLocal}>Click to increment local</button>
       <h1>local: {localNumber}</h1>
     </div>
