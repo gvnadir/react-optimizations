@@ -5,16 +5,6 @@ const Child = (props) => {
     console.log("child render");
   });
 
-  useEffect(() => {
-    console.log("child componentDidMount");
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      console.log("child componentWillUnmount");
-    };
-  }, []);
-
   function changeNumber() {
     props.changeNumber(Math.random());
   }
