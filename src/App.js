@@ -28,9 +28,13 @@ export default function App() {
     setLocalNumber((state) => state + 1);
   }
 
+	function changeChildNumber(number) {
+		setChildNumber(number)
+	}
+
   return (
     <div className="App">
-      <Child number={childNumber} />
+      <Child changeNumber={changeChildNumber} number={childNumber} />
       <button onClick={incrementLocal}>Click to increment local</button>
       <h1>local: {localNumber}</h1>
     </div>

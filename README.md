@@ -19,12 +19,18 @@ By stopping the render of one component, you can prevent the re-rendering of N c
 
 To use React memo we just need to import it from 'react' and wrap our Child component with it.
 
+
+## brack-react-memo branch
+
+In this branch I'll show how to break the react memo by just using a callback as a prop of the Child component.
+
+So why do the react memo break if I use a callback?  
+To understand it we need to know how the comparison between props is really made.
+
 ### The React.memo() limitation
 
-How is the React.memo() comparison really made?
-
-It's a **shallow** comparison then it will work only with **primitive values**.
-If we pass a callback as a prop to our component, the React.memo() will fail cause it will perform a shallow comparison between the prev function and the re-created one (they are two objects at the end that have two different address in memory).
+The comparison performed by React.memo is a **shallow** comparison, then it will work only with **primitive values**.
+If we pass a callback as a prop to our component, the React.memo() will fail because it will perform a shallow comparison between the prev function and the re-created one and since they're objects they will end up having two different address in memory.
 
 4. We can use the useCallback() hook.
    useCallback() will save a function of our choice somewhere in React's internal storage and will use the same function object
