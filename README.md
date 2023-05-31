@@ -4,13 +4,13 @@ _This repo has been created by following this video_: <a href="https://www.youtu
 
 In order to go through the react optimizations step by step, you have to follow the order of the branches listed below (this will respect the steps of the video too)
 
-## react-unoptimized branch
+## 1-react-unoptimized branch
 
 When a component is re-rendered, every child and descendent will be also re-rendered **even if no changes are made**. Keep in mind that even though they are re-evaluated, the real DOM **will not be changed if there are no actual changes** (this is what makes React's virtual DOM perfomant). Anyway, re-render these components is a complete waste. 
 
 So we can see this behaviour by clicking the _click to incremental local_ button of the parent component (App). Whenever the button is clicked, the Child component is re-rendered even if no changes are made to its class.
 
-## react-memo branch
+## 2-react-memo branch
 
 `React.memo()` solves the problem above.
 
@@ -24,7 +24,7 @@ By stopping the render of one component, you can prevent the re-rendering of N c
 To use React memo we just need to import it from `react` and wrap our Child component with it.
 
 
-## break-react-memo branch
+## 3-break-react-memo branch
 
 In this branch I'll show how to break the react memo by just using a callback as a prop of the Child component.
 
@@ -36,14 +36,14 @@ To understand it we need to know how the comparison between props is really made
 The comparison performed by `React.memo` is a **shallow** comparison, then it will work only with **primitive values**.
 If we pass a callback as a prop to our component the `React.memo()` will fail because it will perform a shallow comparison between the prev function and the re-created one and since they're objects they will end up having two different address in memory.
 
-## react-usecallback branch
+## 4-react-usecallback branch
 
 To solve the problem above we can use `useCallback()`.
 
 `useCallback()` will save a function of our choice somewhere in React's internal storage and will use the same function object when the component re-executes.
 By doing this, the function will not be re-created so the comparison will be **true** because it will hold the same address in memory.
 
-## react-unoptimized-operation branch
+## 5-react-unoptimized-operation branch
 
 Whenever I re-render my component, all my functions get re-executed too.
 
@@ -51,7 +51,7 @@ Let's suppose we have a very large array and a function that calculates the maxi
 
 If we now click the _Click to increment local_ button we can see the getLargestNumber getting executed at every render.
 
-## react-usememo branch
+## 6-react-usememo branch
 
 Is it possible to memoize (memorize using memo) complex data or other functions?
 Yes, by using the `useMemo()` hook.
