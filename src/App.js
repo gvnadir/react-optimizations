@@ -10,20 +10,6 @@ export default function App() {
     console.log("parent render");
   });
 
-  useEffect(() => {
-    console.log("parent componentDidMount");
-  }, []);
-
-  useEffect(() => {
-    console.log("parent componentDidUpdate");
-  }, [localNumber, childNumber]);
-
-  useEffect(() => {
-    return () => {
-      console.log("parent componentWillUnmount");
-    };
-  }, []);
-
   function incrementLocal() {
     setLocalNumber((state) => state + 1);
   }
