@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import Child from "./Child";
 import './App.css'
 
@@ -11,21 +11,8 @@ export default function App() {
     console.log("parent render");
   });
 
-  useEffect(() => {
-    console.log("parent componentDidMount");
-  }, []);
-
-  useEffect(() => {
-    console.log("parent componentDidUpdate");
-  }, [localNumber, childNumber]);
-
-  useEffect(() => {
-    return () => {
-      console.log("parent componentWillUnmount");
-    };
-  }, []);
-
 	const memoizedCallback = useCallback(number => changeChildNumber(number), [])
+	const memoizedValue = useMemo(() => getLargestNumber(), [arr])
 
   function incrementLocal() {
     setLocalNumber((state) => state + 1);
@@ -40,12 +27,17 @@ export default function App() {
     return Math.max(...arr);
   }
 
+	function changeArray() {
+		setArr([60, 70, 80, 90])
+	}
+
   return (
     <div className="App">
       <Child changeNumber={memoizedCallback} number={childNumber} />
       <button onClick={incrementLocal}>Click to increment local</button>
       <h1>local: {localNumber}</h1>
-      <h1>Largest Number: {getLargestNumber()}</h1>
+      <h1>Largest Number: {memoizedValue}</h1>
+      <button onClick={changeArray}>Change array</button>
     </div>
   );
 }
