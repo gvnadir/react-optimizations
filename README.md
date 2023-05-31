@@ -23,7 +23,7 @@ By stopping the render of one component, you can prevent the re-rendering of N c
 To use React memo we just need to import it from `react` and wrap our Child component with it.
 
 
-## breack-react-memo branch
+## break-react-memo branch
 
 In this branch I'll show how to break the react memo by just using a callback as a prop of the Child component.
 
