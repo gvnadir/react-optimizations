@@ -23,7 +23,7 @@ To use React memo we just need to import it from 'react' and wrap our Child comp
 
 How is the React.memo() comparison really made?
 
-It's a shallow comparison then it will work only with **primitive values**.
+It's a **shallow** comparison then it will work only with **primitive values**.
 If we pass a callback as a prop to our component, the React.memo() will fail cause it will perform a shallow comparison between the prev function and the re-created one (they are two objects at the end that have two different address in memory).
 
 4. We can use the useCallback() hook.
