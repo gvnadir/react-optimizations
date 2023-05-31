@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 
 const Child = (props) => {
   useEffect(() => {
@@ -17,4 +17,4 @@ const Child = (props) => {
   );
 };
 
-export default Child
+export default memo(Child)
