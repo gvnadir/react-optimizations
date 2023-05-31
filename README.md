@@ -1,7 +1,6 @@
 # React Optimizations Guidelines
 
-_This repo has been created by following this video_: [REACT MEMO vs USECALLBACK vs USEMEMO
-](https://www.youtube.com/watch?v=uojLJFt9SzY){:target="_blank"} _by_ [Coding With Chaim](https://www.youtube.com/@CodingWithChaim){:target="_blank"}
+_This repo has been created by following this video_: <a href="https://www.youtube.com/watch?v=uojLJFt9SzY" target="_blank">REACT MEMO vs USECALLBACK vs USEMEMO</a> _by_ <a href="https://www.youtube.com/@CodingWithChaim" target="_blank">Coding With Chaim</a>
 
 In order to go through the react optimizations step by step, you have to follow the order of the branches listed below (this will respect the steps of the video too)
 
