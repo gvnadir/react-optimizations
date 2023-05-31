@@ -2,7 +2,7 @@
 
 _This repo has been created by following this video_: <a href="https://www.youtube.com/watch?v=uojLJFt9SzY" target="_blank">REACT MEMO vs USECALLBACK vs USEMEMO</a> _by_ <a href="https://www.youtube.com/@CodingWithChaim" target="_blank">Coding With Chaim</a>
 
-In order to go through the react optimizations step by step, is recommended to follow the order of the branches listed below (this will respect the steps of the video too)
+In order to go through the react optimizations step by step, is recommended to follow the order of the branches listed below (this way you will follow the steps of the video)
 
 ## 1-react-unoptimized
 
