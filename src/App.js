@@ -28,7 +28,7 @@ export default function App() {
   }
 
 	function changeArray() {
-		setArr([60, 70, 80, 90])
+		setArr([60, 70, 80, 90]);
 	}
 
   return (
