@@ -39,7 +39,7 @@ To solve the problem above we can use useCallback.
 `useCallback()` will save a function of our choice somewhere in React's internal storage and will use the same function object when the component re-executes.
 By doing this, the function will not be re-created so the comparison will be True because it will hold the same address in memory.
 
-## react-unoptimized-operation
+## react-unoptimized-operation branch
 
 Whenever I re-render my component, all my functions get re-executed too.
 
@@ -47,10 +47,8 @@ Let's suppose we have a very large array and a function that calculates the maxi
 
 If we now click the _Click to increment local_ button we can see the getLargestNumber getting executed at every render.
 
-Is it possible to memoize (memorize using memo) complex data or other functions?
-Yes, by using the useMemo() hook.
-Let's say we have a component with a sort function inside.
-We don't want to re-run it whenever the component is re-evaluated.
-This is a perfect use-case for using useMemo().
-useMemo() will memoize this function and call it only when a certain dependency changes.
+## react-usememo branch
 
+Is it possible to memoize (memorize using memo) complex data or other functions?
+Yes, by using the `useMemo()` hook.
+We can use `useMemo()` to solve the problem we faced before. `useMemo()` will memoize our getLargestNumber function and call it only when a certain dependency changes, in our case the `arr` dependency.
