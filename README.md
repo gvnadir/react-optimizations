@@ -3,6 +3,8 @@
 _This repo has been created by following this video_: [REACT MEMO vs USECALLBACK vs USEMEMO
 ](https://www.youtube.com/watch?v=uojLJFt9SzY) _by_ [Coding With Chaim](https://www.youtube.com/@CodingWithChaim)
 
+In order to go through the react optimizations step by step, you have to follow the order of the branches listed below (this will respect the steps of the video too)
+
 ## react-unoptimized branch
 
 When a component is re-rendered, every child and descendent will be also re-rendered **even if no changes are made**. Keep in mind that even though they are re-evaluated, the real DOM **will not be changed if there are no actual changes** (this is what makes React's virtual DOM perfomant). Anyway, re-render these components is a complete waste. 
