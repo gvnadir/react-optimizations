@@ -1,4 +1,4 @@
-# React Optimizations Guidelines
+# React Optimizations Guideline
 
 _This repo has been created by following this video_: <a href="https://www.youtube.com/watch?v=uojLJFt9SzY" target="_blank">REACT MEMO vs USECALLBACK vs USEMEMO</a> _by_ <a href="https://www.youtube.com/@CodingWithChaim" target="_blank">Coding With Chaim</a>
 
