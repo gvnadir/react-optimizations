@@ -60,3 +60,5 @@ We can use `useMemo()` to solve the problem we faced before. `useMemo()` will me
 > Use memo(), useMemo() and useCallback() when **strictly necessary** because avoiding re-evaluations comes at a cost: comparing props (old vs new) also requires some code to run, it's not "free".
 
 > Use useMemo() only for avoiding **expensive** re-calculations. Use useCallback() for avoiding unnecessary function re-creations.
+
+> The main difference between useMemo() and useCallback() is that useMemo() is used for memoizing **values**, while useCallback() is used for memoizing **functions**.
