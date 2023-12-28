@@ -56,3 +56,7 @@ If we now click the _Click to increment local_ button we can see the getLargestN
 Is it possible to memoize (memorize using memo) complex data or other functions?
 Yes, by using the `useMemo()` hook.
 We can use `useMemo()` to solve the problem we faced before. `useMemo()` will memoize our `getLargestNumber()` function and call it only when a certain dependency changes, in our case the `arr` dependency.
+
+> Use memo(), useMemo() and useCallback() when **strictly necessary** because avoiding re-evaluations comes at a cost: comparing props (old vs new) also requires some code to run, it's not "free".
+
+> Use useMemo() only for avoiding **expensive** re-calculations. Use useCallback() for avoiding unnecessary function re-creations.
